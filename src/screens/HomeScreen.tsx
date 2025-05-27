@@ -56,7 +56,7 @@ export default function HomeScreen() {
   };
 
   const irDevice = () => {
-    navigation.navigate('Device');
+    navigation.navigate('MapScreen');
   };
 
   return (
@@ -72,7 +72,7 @@ export default function HomeScreen() {
         style={styles.exitButton}
         onPress={irDevice}
         activeOpacity={0.7}>
-        <Text style={styles.exitButtonText}>ir a Device</Text>
+        <Text style={styles.exitButtonText}>ir a Mapa</Text>
       </TouchableOpacity>
     </View>
   );

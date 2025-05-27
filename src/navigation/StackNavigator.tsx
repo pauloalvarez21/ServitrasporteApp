@@ -1,14 +1,15 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
-import DeviceInfoScreen from '../screens/DeviceInfoScreen';
-import { PermissionScreen } from '../screens/PermissionScreen';
-
+import MapScreen from '../screens/MapScreen';
+import {PermissionScreen} from '../screens/PermissionScreen';
+import {LoadingScreen} from '../screens/LoadingScreen';
 // Define los tipos de rutas
 export type RootStackParamList = {
   Home: undefined;
-  Device: undefined;
+  MapScreen: undefined;
   PermissionScreen: undefined;
+  LoadingScreen: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -16,14 +17,15 @@ const Stack = createStackNavigator<RootStackParamList>();
 export const StackNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="LoadingScreen"
       screenOptions={{
         headerShown: false,
         cardStyle: {backgroundColor: '#ffffff'},
       }}>
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Device" component={DeviceInfoScreen} />
+      <Stack.Screen name="MapScreen" component={MapScreen} />
       <Stack.Screen name="PermissionScreen" component={PermissionScreen} />
+      <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
     </Stack.Navigator>
   );
 };

@@ -1,6 +1,7 @@
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import {Platform, StyleSheet} from 'react-native';
 import { Location } from '../../infrastructure/interfaces/location';
+import { FAB } from '../component/FAB';
 
 interface Props {
   showsUserLocation?: boolean;
@@ -30,6 +31,8 @@ export const Map = ({showsUserLocation = true, initialLocation}: Props) => {
           image={require('../../assets/custom-marker.png')}
         />
       </MapView>
+
+      <FAB iconName="add" onPress={() => { console.log('add') }}  style={{position: 'absolute', bottom: 20, right: 20}}/>
     </>
   );
 };
